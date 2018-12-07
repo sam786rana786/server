@@ -29,4 +29,5 @@ app.post('/register', register.handleregister(db, bcrypt));
 app.get('/profile/:id', profile.handleprofile(db));
 app.put('/image', image.handleimage(db));
 app.post('/imageurl', image.handleApiCall);
-app.listen(3000, ()=> {console.log('app is running on port 3000')});
+const PORT = process.env.PORT;
+app.listen(PORT || 3000, ()=> {console.log(`app is running on port ${PORT}`)});
